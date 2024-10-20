@@ -6,13 +6,16 @@ edition = "2021"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
-
 dioxus = { version = "0.6.0-alpha.3", features = ["fullstack", "router"] }
-
-# Debug
 dioxus-logger = "0.5.1"
+chrono = { version = "0.4.38" }
+
+reqwest = { version = "0.12", optional = true }
+scraper = { version = "0.20", optional = true }
+url = { version = "*", optional = true }
+serde_json = { version = "1.0", optional = true }
 
 [features]
 default = []
-server = ["dioxus/axum"]
+server = ["dioxus/axum", "reqwest", "scraper", "url", "serde_json"]
 web = ["dioxus/web"]

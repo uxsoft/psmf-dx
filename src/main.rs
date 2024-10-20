@@ -5,6 +5,7 @@ use dioxus_logger::tracing;
 
 pub mod components;
 pub mod pages;
+pub mod server;
 
 use pages::home_page::HomePage;
 
@@ -66,15 +67,4 @@ fn App() -> Element {
 //             p { "Server data: {text}"}
 //         }
 //     }
-// }
-
-// #[server(PostServerData)]
-// async fn post_server_data(data: String) -> Result<(), ServerFnError> {
-//     tracing::info!("Server received: {}", data);
-//     Ok(())
-// }
-
-// #[server(GetServerData)]
-// async fn get_server_data() -> Result<String, ServerFnError> {
-//     Ok("Hello from the server!".to_string())
 // }
